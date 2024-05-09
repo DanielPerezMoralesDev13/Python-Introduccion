@@ -1,3 +1,8 @@
+"""
+Autor: Daniel Benjamin Perez Morales
+GitHub: https://github.com/DanielPerezMoralesDev13
+Correo electrónico: danielperezdev@proton.me 
+"""
 # Tema: Funciones
 """
 Paradigma: funcional es un paradigma de programación que se basa en funciones y en la programación declarativa
