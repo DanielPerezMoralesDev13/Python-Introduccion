@@ -1,34 +1,37 @@
-# **_Repositorio de Introducción a Python_**
+<!-- Autor: Daniel Benjamin Perez Morales -->
+<!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
+<!-- Correo electrónico: danielperezdev@proton.me  -->
+# **_Introduction to Python Repository_**
 
 > [!IMPORTANT]
-> _Este repositorio contiene una serie de ficheros de Python diseñados para introducir conceptos básicos del lenguaje de programación Python. Cada fichero aborda un tema específico, desde la declaración de variables hasta el manejo de excepciones._
+> _This repository contains a series of Python files designed to introduce basic concepts of the Python programming language. Each file addresses a specific topic, from variable declaration to exception handling._
 
-## ficheros
+## Files
 
-1. **HolaMundo.py**: _Un simple script que imprime "Hola, Mundo!" en la consola._
-2. **Variables.py**: _Introduce el concepto de variables en Python y cómo asignarles valores._
-3. **Operador.py**: _Explora operadores básicos como suma, resta, multiplicación y división en Python._
-4. **Strings.py**: _Cubre operaciones y manipulaciones básicas de cadenas de caracteres._
-5. **Listas.py**: _Introduce listas, una estructura de datos fundamental en Python._
-6. **Tuples.py**: _Explica las tuplas y sus diferencias con las listas._
-7. **Sets.py**: _Introduce conjuntos y sus propiedades únicas._
-8. **Diccionario.py**: _Explora el uso de diccionarios para mapear claves a valores._
-9. **Condicionales.py**: _Introduce declaraciones condicionales (if, else, elif) en Python._
-10. **Loops o Bucles.py**: _Cubre bucles (loops) como for y while para la iteración en Python._
-11. **Funciones.py**: _Introduce cómo definir y utilizar funciones en Python._
-12. **Clases.py**: _Explora la programación orientada a objetos en Python mediante la creación de clases y objetos._
-13. **Excepciones.py**: _Introduce el manejo de excepciones para gestionar errores en Python._
-14. **Modulos.py**: _Explica cómo importar y utilizar módulos en Python._
+1. **HelloWorld.py**: _A simple script that prints "Hello, World!" to the console._
+2. **Variables.py**: _Introduces the concept of variables in Python and how to assign values to them._
+3. **Operators.py**: _Explores basic operators such as addition, subtraction, multiplication, and division in Python._
+4. **Strings.py**: _Covers basic string operations and manipulations._
+5. **Lists.py**: _Introduces lists, a fundamental data structure in Python._
+6. **Tuples.py**: _Explains tuples and their differences from lists._
+7. **Sets.py**: _Introduces sets and their unique properties._
+8. **Dictionary.py**: _Explores the use of dictionaries to map keys to values._
+9. **Conditionals.py**: _Introduces conditional statements (if, else, elif) in Python._
+10. **Loops.py**: _Covers loops such as for and while for iteration in Python._
+11. **Functions.py**: _Introduces how to define and use functions in Python._
+12. **Classes.py**: _Explores object-oriented programming in Python by creating classes and objects._
+13. **Exceptions.py**: _Introduces exception handling to manage errors in Python._
+14. **Modules.py**: _Explains how to import and use modules in Python._
 
-## **Uso**
+## **Usage**
 
-_Puedes ejecutar cualquiera de los ficheros usando Python en tu terminal. Por ejemplo:_
+_You can execute any of the files using Python in your terminal. For example:_
 
 ```bash
-python3 #1.HolaMundo.py
+python3 #1.HelloWorld.py
 ```
 
 > [!NOTE]
-> _Estos ficheros están diseñados para ser explorados secuencialmente para una comprensión progresiva de Python._
+> _These files are designed to be explored sequentially for a progressive understanding of Python._
 
-**¡Espero que te sean útiles en tu aprendizaje de Python!**
+**I hope they are useful in your Python learning journey!**
