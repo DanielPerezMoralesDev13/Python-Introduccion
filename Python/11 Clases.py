@@ -11,14 +11,14 @@ Paradigma: orientado a objetos es un paradigma de programación que se basa en o
 """
 
 
-class PersonaaVacia:
+class PersonaVacia:
     # constructor
     def __init__(self: object) -> None:
         pass  # Para poder dejar la clase vacía
 
 
-print(PersonaaVacia, end="\n")  # Nos imprime el tipo de dato de la clase
-print(PersonaaVacia(), end="\n")  # Nos imprime el objeto de la clase
+print(PersonaVacia, end="\n")  # Nos imprime el tipo de dato de la clase
+print(PersonaVacia(), end="\n")  # Nos imprime el objeto de la clase
 
 # Clase con constructor, funciones y popiedades privadas y públicas
 
