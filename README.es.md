@@ -8,7 +8,7 @@
 
 ## ficheros
 
-1. **HolaMundo.py**: _Un simple script que imprime "Hola, Mundo!" en la consola._
+1. **Hola Mundo.py**: _Un simple script que imprime "Hola, Mundo!" en la consola._
 2. **Variables.py**: _Introduce el concepto de variables en Python y cómo asignarles valores._
 3. **Operador.py**: _Explora operadores básicos como suma, resta, multiplicación y división en Python._
 4. **Strings.py**: _Cubre operaciones y manipulaciones básicas de cadenas de caracteres._
@@ -28,7 +28,7 @@
 _Puedes ejecutar cualquiera de los ficheros usando Python en tu terminal. Por ejemplo:_
 
 ```bash
-python3 "00 Hello World.py"
+python3 "00 Hola Mundo.py"
 ```
 
 > [!NOTE]
