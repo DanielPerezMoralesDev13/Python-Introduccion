@@ -28,7 +28,7 @@
 _You can execute any of the files using Python in your terminal. For example:_
 
 ```bash
-python3 #1.HelloWorld.py
+python3 "00 Hello World.py"
 ```
 
 > [!NOTE]
