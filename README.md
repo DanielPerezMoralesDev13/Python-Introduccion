@@ -8,7 +8,7 @@
 
 ## Files
 
-1. **HelloWorld.py**: _A simple script that prints "Hello, World!" to the console._
+1. **Hello World.py**: _A simple script that prints "Hello, World!" to the console._
 2. **Variables.py**: _Introduces the concept of variables in Python and how to assign values to them._
 3. **Operators.py**: _Explores basic operators such as addition, subtraction, multiplication, and division in Python._
 4. **Strings.py**: _Covers basic string operations and manipulations._
@@ -28,7 +28,7 @@
 _You can execute any of the files using Python in your terminal. For example:_
 
 ```bash
-python3 "00 Hello World.py"
+python3 "00 Hola Mundo.py"
 ```
 
 > [!NOTE]
