@@ -34,4 +34,12 @@ python3 "00 Hola Mundo.py"
 > [!NOTE]
 > _Estos ficheros están diseñados para ser explorados secuencialmente para una comprensión progresiva de Python._
 
+## ***Contribuciones***
+
+> *¡Las contribuciones son bienvenidas! Si tienes sugerencias, correcciones o deseas agregar contenido adicional a esta guía, no dudes en abrir un problema o enviar una solicitud de extracción. Tu ayuda es fundamental para hacer de esta guía una referencia completa y actualizada para la comunidad de desarrollo.*
+
+## ***Licencia***
+
+> *Este repositorio se publica bajo la Licencia MIT. Siéntete libre de utilizar, modificar y distribuir el contenido de acuerdo con los términos de esta licencia.*
+
 **¡Espero que te sean útiles en tu aprendizaje de Python!**
