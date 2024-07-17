@@ -3,6 +3,9 @@ Autor: Daniel Benjamin Perez Morales
 GitHub: https://github.com/DanielPerezMoralesDev13
 Correo electrónico: danielperezdev@proton.me 
 """
+from typing import Dict, Union, Set, List
+from sys import stdout
+
 # Definición
 
 """
@@ -25,44 +28,45 @@ La clave de un diccionario puede ser de cualquier tipo inmutable, como los núme
 - Los diccionarios no son estructuras de datos eficientes en el uso de memoria, debido a que almacenan la información en forma de clave:valor, por lo que cada elemento del diccionario almacena dos valores.
 
 """
-# | es el operador de unión de tipos de datos que se utiliza para indicar que un parámetro puede ser de varios tipos de datos
-dicccionario: dict[str | int | float | bool, str | int | float | bool] = dict()
-otro_dicccionario: dict[str | int | float | bool, str | int | float | bool] = {}
-otra_forma: dict[str, str] = dict(
-    Nombre="Daniel",
-    Apellido="Perez",
-    Edad=35,
-    Lenguajes={"Python", "Rust", "Typescript"},
-    Altura=1.77,
+# En Python, el operador | se utiliza como el operador de "or" a nivel de bits (bitwise OR). Este operador realiza una operación OR a nivel de bits entre los operandos en una representación binaria.
+# Operación a nivel de bits: El operador | toma dos números y realiza una operación OR a nivel de bits en sus representaciones binarias.
+dicccionario: Dict[Union[str, int], Union[str, int, Set[str], float]] = dict()
+otroDicccionario: Dict[Union[str, int], Union[str, int, Set[str], float]] = {}
+otraForma = dict(
+    Nombre = "Daniel",
+    Apellido = "Perez",
+    Edad = 18,
+    Lenguajes = {"Python", "Rust", "Typescript"},
+    Altura = 1.77,
 )
 
 
-print(type(dicccionario), end="\n")
-print(type(otro_dicccionario), end="\n")
+print(type(dicccionario), end = "\n", file = stdout)
+print(type(otroDicccionario), end = "\n", file = stdout)
 
-otro_dicccionario: dict[str, str | int] = {
+otroDicccionario = {
     "Nombre": "Daniel",
     "Apellido": "Perez",
     "Edad": 35,
-    1: "Python",
+    1: "Python"
 }
 
-dicccionario: dict[str, str | int] = {
+dicccionario = {
     "Nombre": "Daniel",
     "Apellido": "Perez",
     "Edad": 35,
     "Lenguajes": {"Python", "Rust", "Typescript"},
-    1: 1.77,
+    1: 1.77
 }
 
-print(otro_dicccionario, end="\n")
-print(dicccionario, end="\n")
+print(otroDicccionario, end = "\n", file = stdout)
+print(dicccionario, end = "\n", file = stdout)
 
 print(
-    len(otro_dicccionario), end="\n"
+    len(otroDicccionario), end = "\n", file = stdout
 )  # Cantidad de elementos en el diccionario en total serian 4. Nombre, Apellido, Edad, 1 no se cuentan los valores de los conjuntos
 print(
-    len(dicccionario), end="\n"
+    len(dicccionario), end = "\n", file = stdout
 )  # Cantidad de elementos en el diccionario en total serian 5. Nombre, Apellido, Edad, Lenguajes, 1 no se cuentan los valores de los conjuntos
 
 # Búsqueda
@@ -71,27 +75,27 @@ Para buscar un valor en un diccionario, debemos usar la llave correspondiente. S
 
 Usamos el [] para buscar un valor en un diccionario, pero también para insertar o actualizar un valor. Si la llave existe, se actualizará el valor, si la llave no existe, se insertará el valor.
 """
-print(dicccionario[1], end="\n")
-print(dicccionario["Nombre"], end="\n")
+print(dicccionario[1], end = "\n", file = stdout)
+print(dicccionario["Nombre"], end = "\n", file = stdout)
 
 
 # El operador de pertenencia in nos permite saber si una llave existe en un diccionario. Nos retorna True si la llave existe y False si no existe. Si queremos saber si un valor existe en un diccionario, debemos usar el método values.
-print("Perez" in dicccionario, end="\n")
-print("Apellido" in dicccionario, end="\n")
+print("Perez" in dicccionario, end = "\n", file = stdout)
+print("Apellido" in dicccionario, end = "\n", file = stdout)
 
 # Inserción
 """
 Para insertar un valor en un diccionario, debemos usar el [] y asignarle un valor. Si la llave existe, se actualizará el valor, si la llave no existe, se insertará el valor.
 """
 dicccionario["Calle"] = "Calle DaniDev"
-print(dicccionario, end="\n")
+print(dicccionario, end = "\n", file = stdout)
 
 # Actualización
 """
 Para actualizar un valor en un diccionario, debemos usar el [] y asignarle un valor. Si la llave existe, se actualizará el valor, si la llave no existe, se insertará el valor.
 """
 dicccionario["Nombre"] = "Benjamin"
-print(dicccionario["Nombre"], end="\n")
+print(dicccionario["Nombre"], end = "\n", file = stdout)
 
 # Eliminación
 
@@ -99,13 +103,14 @@ print(dicccionario["Nombre"], end="\n")
 Para eliminar un valor en un diccionario, debemos usar el método pop, que recibe como parámetro la llave a eliminar y retorna el valor eliminado. Si la llave no existe, obtendremos un error de tipo KeyError. Para evitar este error, podemos usar el método pop, que recibe como parámetro la llave a eliminar y un valor por defecto que se retornará en caso de que la llave no exista. También podemos usar la palabra reservada del, que recibe como parámetro la llave a eliminar. Si la llave no existe, obtendremos un error de tipo KeyError. Para evitar este error, podemos usar el método pop, que recibe como parámetro la llave a eliminar y un valor por defecto que se retornará en caso de que la llave no exista.
 """
 del dicccionario["Calle"]
-print(dicccionario, end="\n")
+print(dicccionario, end = "\n", file = stdout)
 
 # Esta variable almacenara el valor eliminado de la llave "Nombre" en caso de que exista, en caso de que no exista almacenara None
-valor_eliminado: str | None = dicccionario.pop("Nombre", None)
-print(dicccionario, end="\n")
+valorEliminado: Union[str, int, Set[str], float, None] = dicccionario.pop("Nombre", None)
 
-print(valor_eliminado, end="\n")
+print(dicccionario, end = "\n", file = stdout)
+
+print(valorEliminado, end = "\n", file = stdout)
 
 
 # Otras operaciones
@@ -115,45 +120,53 @@ El método keys() nos permite obtener una lista con todas las llaves del diccion
 
 El método values() nos permite obtener una lista con todos los valores del diccionario.
 """
-print(dicccionario.items(), end="\n")
-print(dicccionario.keys(), end="\n")
-print(dicccionario.values(), end="\n")
+print(dicccionario.items(), end = "\n", file = stdout)
+print(dicccionario.keys(), end = "\n", file = stdout)
+print(dicccionario.values(), end = "\n", file = stdout)
 
-lista: list[str, int] = ["Nombre", 1, "Piso"]
+lista: List[Union[str, int]] = ["Nombre", 1, "Piso"]
 
 """
 El método fromkeys() nos permite crear un diccionario a partir de una lista de llaves. El método fromkeys() recibe como primer parámetro la lista de llaves y como segundo parámetro un valor por defecto para todas las llaves. Si no se especifica el segundo parámetro, el valor por defecto será None.
 
 Poner entre parentesis la lista, tupla o conjunto, es para que el metodo fromkeys() reciba un iterable, y no una lista de argumentos.
 """
-nuevo_diccionario: dict[str | int, int | str] = dict.fromkeys(
-    (lista), "Valor por defecto"
+
+nuevoDiccionario: Dict[Union[str, int], Union[str, int, Set[str], float, None]] = dict.fromkeys(
+    lista, "Valor por defecto"
 )
-print(nuevo_diccionario, end="\n")
-nuevo_diccionario: dict[str | int, int | str] = dict.fromkeys(
+
+print(nuevoDiccionario, end = "\n", file = stdout)
+
+nuevoDiccionario = dict.fromkeys(
     ("Nombre", 1, "Piso"), None
 )
-print((nuevo_diccionario), end="\n")
-nuevo_diccionario: dict[str | int, int | str] = dict.fromkeys((dicccionario), None)
-print((nuevo_diccionario), end="\n")
 
-nuevo_diccionario: dict[str | int, int | str] = dict.fromkeys(dicccionario, "DaniDev")
-print((nuevo_diccionario), end="\n")
+print(nuevoDiccionario, end = "\n", file = stdout)
 
-valor: dict = nuevo_diccionario.values()
-print(type(valor), end="\n")
+nuevoDiccionario = dict.fromkeys(
+    (dicccionario), None
+)
+print(nuevoDiccionario, end = "\n", file = stdout)
 
-print(nuevo_diccionario.values(), end="\n")
+nuevoDiccionario = dict.fromkeys(dicccionario, "DaniDev")
+print(nuevoDiccionario, end = "\n", file = stdout)
+
+valor = nuevoDiccionario.values()
+print(type(valor), end = "\n", file = stdout)
+
+print(nuevoDiccionario.values(), end = "\n", file = stdout)
+
 """
 Esta linea de codigo nos permite obtener una lista de los valores del diccionario, sin repetir ninguno, es decir, si hay dos valores iguales, solo se mostrara uno.
 
-list() convierte el objeto en una lista
-dict.fromkeys() convierte el objeto en un diccionario
-.values() obtiene los valores del diccionario
-keys() obtiene las llaves del diccionario
+>>> list() convierte el objeto en una lista
+>>> dict.fromkeys() convierte el objeto en un diccionario
+>>> .values() obtiene los valores del diccionario
+>>> keys() obtiene las llaves del diccionario
 
 """
-print(list(set(nuevo_diccionario.values())), end="\n")
-print(tuple(nuevo_diccionario), end="\n")
-print(set(nuevo_diccionario), end="\n")
+print(list(set(nuevoDiccionario.values())), end = "\n", file = stdout)
+print(tuple(nuevoDiccionario), end = "\n", file = stdout)
+print(set(nuevoDiccionario), end = "\n", file = stdout)
 

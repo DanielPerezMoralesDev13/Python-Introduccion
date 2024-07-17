@@ -33,20 +33,24 @@ Mutables: Son los objetos que se pueden modificar
 Inmutables: Son los objetos que no se pueden modificar
 """
 
-lista: list = list()
-otra_lista: list = []
+from sys import stdout
+from typing import Any, List, Union
 
-print(len(lista), end="\n")
 
-lista: list[int] = [35, 24, 62, 52, 30, 30, 17]
+lista: list[int] = list()
+otraLista: List[Union[int, float, str, None]] = []
 
-print(lista, end="\n")
-print(len(lista), end="\n")
+print(len(lista), end = "\n", file = stdout)
 
-otra_lista: list[int, float, str] = [35, 1.77, "Daniel", "Perez"]
+lista = [35, 24, 62, 52, 30, 30, 17]
 
-print(type(lista), end="\n")
-print(type(otra_lista), end="\n")
+print(lista, end = "\n", file = stdout)
+print(len(lista), end = "\n", file = stdout)
+
+otraLista = [35, 1.77, "Daniel", "Perez"]
+
+print(type(lista), end = "\n", file = stdout)
+print(type(otraLista), end = "\n", file = stdout)
 
 # Acceso a elementos y búsqueda de elementos mediante índices
 """
@@ -67,61 +71,66 @@ Los índices positivos empiezan desde 0
 Los índices negativos empiezan desde -1
 """
 
-print(otra_lista[0], end="\n")
-print(otra_lista[1], end="\n")
-print(otra_lista[-1], end="\n")
-print(otra_lista[-4], end="\n")
+print(otraLista[0], end = "\n", file = stdout)
+print(otraLista[1], end = "\n", file = stdout)
+print(otraLista[-1], end = "\n", file = stdout)
+print(otraLista[-4], end = "\n", file = stdout)
 # .count() devuelve el número de veces que aparece un elemento en una lista puede ser un número o una cadena
-print(lista.count(30))
-# print(otra_lista[4]) Si el índice no existe en la lista IndexError
-# print(otra_lista[-5]) Si el índice no existe en la lista genera un error IndexError
+print(lista.count(30), end = "\n", file = stdout)
+# print(otraLista[4]) Si el índice no existe en la lista IndexError
+# print(otraLista[-5]) Si el índice no existe en la lista genera un error IndexError
 
-print(otra_lista.index("Daniel"), end="\n")
+print(otraLista.index("Daniel"), end = "\n", file = stdout)
 
 # Desempaquetado de listas
 """
-otra_lista = [35, 1.77, "Daniel", "Perez"]
-edad:int = 35
-ancho:float = 1.77
-nombre:str = "Daniel"
-segundo_nombre:str = "Perez"
+otraLista = [35, 1.77, "Daniel", "Perez"]
+edad: int = 35
+ancho: float = 1.77
+nombre: str = "Daniel"
+segundoNombre: str = "Perez"
 """
-edad, ancho, nombre, segundo_nombre = otra_lista
-print(nombre, end="\n")
+edad: Union[int, float, str, None] = None
+ancho: Union[int, float, str, None] = None
+nombre: Union[int, float, str, None] = None
+segundoNombre: Union[int, float, str, None] = None
+
+edad, ancho, nombre, segundoNombre = otraLista
+print(nombre, end = "\n", file = stdout)
 
 # Otra forma de desempaquetar listas es:
-nombre, ancho, edad, segundo_nombre = (
-    otra_lista[2],
-    otra_lista[1],
-    otra_lista[0],
-    otra_lista[3],
+nombre, ancho, edad, segundoNombre = (
+    otraLista[2],
+    otraLista[1],
+    otraLista[0],
+    otraLista[3],
 )
-print(edad, end="\n")
+print(edad, end = "\n", file = stdout)
 
 # Concatenación de listas
 
 # Al hacer una suma de listas se concatenan
 # [35, 24, 62, 52, 30, 30, 17] + [35, 1.77, "Daniel", "Perez"]
 # [35, 24, 62, 52, 30, 30, 17, 35, 1.77, "Daniel", "Perez"]
-print(lista + otra_lista, end="\n")
-# print(lista - otra_lista) No se puede restar listas SyntaxError
+print(lista + otraLista, end = "\n", file = stdout)
+# print(lista - otraLista) No se puede restar listas SyntaxError
 
 # Creación, inserción, actualización y eliminación
 
 # El metodo append() agrega un elemento al final de la lista
-otra_lista.append("Daniel")
-print(otra_lista, end="\n")
+otraLista.append("Daniel")
+print(otraLista, end = "\n", file = stdout)
 
 # El metodo insert() agrega un elemento en la posición que se le indique
 # insert(posición, elemento)
 """
-otra_lista = [35, 1.77, "Daniel", "Perez"]
+otraLista = [35, 1.77, "Daniel", "Perez"]
 
-otra_lista.insert(1, "Rojo")
-otra_lista = [35, "Rojo", 1.77, "Daniel", "Perez"]
+otraLista.insert(1, "Rojo")
+otraLista = [35, "Rojo", 1.77, "Daniel", "Perez"]
 """
-otra_lista.insert(1, "Rojo")
-print(otra_lista, end="\n")
+otraLista.insert(1, "Rojo")
+print(otraLista, end = "\n", file = stdout)
 
 # Cambiar un elemento de la lista mediante su índice
 """
@@ -130,20 +139,20 @@ otros_lista = [35, "Rojo", 1.77, "Daniel", "Perez"]
 lista  35  "Rojo"  1.77  "Daniel"  "Perez"
 indice  0     1      2       3         4
 
-otra_lista[1] = "Azul"
-otra_lista = [35, "Azul", 1.77, "Daniel", "Perez"]
+otraLista[1] = "Azul"
+otraLista = [35, "Azul", 1.77, "Daniel", "Perez"]
 
 """
-otra_lista[1] = "Azul"
-print(otra_lista, end="\n")
+otraLista[1] = "Azul"
+print(otraLista, end = "\n", file = stdout)
 
 
 # El metodo remove() elimina un elemento de la lista mediante su valor si hay más de un elemento con el mismo valor elimina el primero que encuentre si no encuentra el elemento genera un error ValueError.
-otra_lista.remove("Azul")
-print(otra_lista, end="\n")
+otraLista.remove("Azul")
+print(otraLista, end = "\n", file = stdout)
 
 lista.remove(30)
-print(lista, end="\n")
+print(lista, end = "\n", file = stdout)
 
 # El metodo pop() elimina un elemento de la lista mediante su índice si no se le indica un índice elimina el último elemento de la lista
 
@@ -151,26 +160,26 @@ print(lista, end="\n")
 # lista.pop(0) elimina el primer elemento de la lista
 # lista.pop(2) elimina el elemento en la posición 2 de la lista
 # lista.pop(3) elimina el elemento en la posición 3 de la lista
-print(lista.pop(), end="\n")
-print(lista, end="\n")
+print(lista.pop(), end = "\n", file = stdout)
+print(lista, end = "\n", file = stdout)
 
 # Se puede guardar el elemento que se elimina en una variable de esta forma
 pop_elemento = lista.pop(2)
-print(pop_elemento, end="\n")
-print(lista, end="\n")
+print(pop_elemento, end = "\n", file = stdout)
+print(lista, end = "\n", file = stdout)
 
 # la palabra reservada del elimina una variable o un elemento de una lista mediante su índice
 del lista[2]
-print(lista, end="\n")
+print(lista, end = "\n", file = stdout)
 
 # Operaciones con listas
 
-nueva_lista: list[any] = lista.copy()
+nuevaLista: List[Any] = lista.copy()
 
 # El metodo clear() elimina todos los elementos de una lista y la deja vacia
 lista.clear()
-print(lista, end="\n")
-print(nueva_lista, end="\n")
+print(lista, end = "\n", file = stdout)
+print(nuevaLista, end = "\n", file = stdout)
 
 # El metodo reverse() invierte el orden de los elementos de una lista
 # El metodo sort() ordena los elementos de una lista de menor a mayor si la lista tiene elementos de diferentes tipos genera un error TypeError
@@ -178,32 +187,33 @@ print(nueva_lista, end="\n")
 # Tener en cuenta que sort() ordena las strings basándose en el orden lexicográfico, que puede no coincidir con el orden alfabético si las strings contienen caracteres no alfabéticos.
 
 # El metodo sort() no retorna nada y modifica la lista original. Tiene como parámetros reverse y key. reverse es un booleano que si es True ordena la lista de mayor a menor y si es False ordena la lista de menor a mayor. key es una función que se le pasa como argumento y que se usa para ordenar la lista.
-nueva_lista.reverse()
+nuevaLista.reverse()
 
-print(nueva_lista, end="\n")
+print(nuevaLista, end = "\n", file = stdout)
 
-nueva_lista.sort()
-print(nueva_lista, end="\n")
+nuevaLista.sort()
+print(nuevaLista, end = "\n", file = stdout)
 
 # Sublistas
 
-print(nueva_lista[1:3])
+print(nuevaLista[1:3])
 
 # Cambio de tipo de dato
 # No todos los lenguages de programación permiten cambiar el tipo de dato de una variable
 lista: str = "Hola Python"
-print(lista, end="\n")
-print(type(lista), end="\n")
+print(lista, end = "\n", file = stdout)
+print(type(lista), end = "\n", file = stdout)
 
 """
 [:] Devuelve una copia de la lista completa
 [::] Devuelve una copia de la lista completa
 [::1] Devuelve una copia de la lista completa
+[0:len(nuevaLista):1] Devuelve una copia de la lista completa
 """
-print(nueva_lista[:], end="\n")
-print(nueva_lista[::], end="\n")
-print(nueva_lista[::1], end="\n")
-
+print(nuevaLista[:], end = "\n", file = stdout)
+print(nuevaLista[::], end = "\n", file = stdout)
+print(nuevaLista[::1], end = "\n", file = stdout)
+print(nuevaLista[0:len(nuevaLista):1], end = "\n", file = stdout)
 """
 Con los las listas pasa algo curioso y es que si asignamos una lista a otra lista y cambiamos un elemento de la lista original se cambia en la lista copia
 

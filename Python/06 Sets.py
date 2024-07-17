@@ -20,83 +20,88 @@ Desventajas de los sets:
 - Son desordenados
 """
 
-conjunto: set = set()
-otro_conjunto: set = {}
+from sys import stdout
+from typing import Set, Union
 
-print(type(conjunto), end="\n")
+"""
+>>> En Python, un conjunto (set) se puede inicializar utilizando llaves {} o la función set(). Sin embargo, las llaves {} se utilizan para inicializar un conjunto vacío, ya que {} se interpreta como un diccionario vacío. Por lo tanto, para inicializar un conjunto vacío, se debe utilizar set().
+"""
+conjunto: Set[Union[str, int]] = set()
+otroConjunto: Set[Union[str, int]] = set()
+
+print(type(conjunto), end = "\n", file = stdout)
 
 """
 Si se inicializa un set con {} se inicializa como un diccionario
 """
-print(type(otro_conjunto), end="\n")  # Inicialmente es un diccionario
+print(type(otroConjunto), end = "\n", file = stdout)  # Inicialmente es un diccionario
 
-otro_conjunto = {"Daniel", "Perez", 35}
-print(type(otro_conjunto), end="\n")
+otroConjunto = {"Daniel", "Perez", 35}
+print(type(otroConjunto), end = "\n", file = stdout)
 
-print(len(otro_conjunto), end="\n")
+print(len(otroConjunto), end = "\n", file = stdout)
 
 
 """
 Para añadir elementos a un set se usa el método add
 """
-otro_conjunto.add("DaniDev")
+otroConjunto.add("DaniDev")
 
-print(otro_conjunto, end="\n")  # Un set no es una estructura ordenada
+print(otroConjunto, end = "\n", file = stdout)  # Un set no es una estructura ordenada
 
-otro_conjunto.add("DaniDev")  # Un set no admite repetidos
+otroConjunto.add("DaniDev")  # Un set no admite repetidos
 
-print(otro_conjunto, end="\n")
+print(otroConjunto, end = "\n", file = stdout)
 
 # Búsqueda
 """
 Para buscar un elemento en un set se usa la palabra reservada in
 Que in es un operador de pertenencia
 """
-print("Daniel" in otro_conjunto, end="\n")
-print("Dani" in otro_conjunto, end="\n")
+print("Daniel" in otroConjunto, end = "\n", file = stdout)
+print("Dani" in otroConjunto, end = "\n", file = stdout)
 
 # Eliminación
 
 """
 Para eliminar un elemento de un set se usa el método remove() se le pasa como argumento el elemento a eliminar
 """
-otro_conjunto.remove("Daniel")
-print(otro_conjunto)
+otroConjunto.remove("Daniel")
+print(otroConjunto)
 
 """
 Para eliminar todos los elementos de un set se usa el método clear()
 """
-otro_conjunto.clear()
-print(len(otro_conjunto), end="\n")
+otroConjunto.clear()
+print(len(otroConjunto), end = "\n", file = stdout)
 
 # Eliminación del set completo con el operador del que es un operador de eliminación
 
-del otro_conjunto
-# print(otro_conjunto) NameError: name 'otro_conjunto' is not defined
+del otroConjunto
+# print(otroConjunto) NameError: name 'otroConjunto' is not defined
 
 # Transformación
 """
 Podemos convertir un set a una lista con la función list()
 """
-conjunto: set[str, int] = {"Daniel", "Perez", 35}
-lista: list[str, int] = list(conjunto)
-print(lista, end="\n")
-print(lista[0], end="\n")
+conjunto = {"Daniel", "Perez", 35}
+lista: list[Union[str, int]] = list(conjunto)
+print(lista, end = "\n", file = stdout)
+print(lista[0], end = "\n", file = stdout)
 
-otro_conjunto: set[str] = {"Rust", "Typescript", "Python"}
+otroConjunto = {"Rust", "Typescript", "Python"}
 
 # Otras operaciones
 
 """
 El método union() une dos sets y retorna un nuevo set con los elementos de ambos sets sin repetir los elementos repetidos. Se toma como parámetro el set con el que se quiere unir
-
 """
-nuevo_set: set[str, int] = conjunto.union(otro_conjunto)
-print(nuevo_set.union(nuevo_set).union(conjunto).union({"JavaScript", "Java"}))
+nuevoSet: Set[Union[str, int]] = conjunto.union(otroConjunto)
+print(nuevoSet.union(nuevoSet).union(conjunto).union({"JavaScript", "Java"}))
 
 """
 El método difference() retorna un nuevo set con los elementos que no se repiten entre dos sets
 
-En este caso los elementos que no se repiten entre nuevo_set y conjunto
+En este caso los elementos que no se repiten entre nuevoSet y conjunto
 """
-print(nuevo_set.difference(conjunto), end="\n")
+print(nuevoSet.difference(conjunto), end = "\n", file = stdout)

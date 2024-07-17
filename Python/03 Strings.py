@@ -5,12 +5,15 @@ Correo electrónico: danielperezdev@proton.me
 """
 # Strings
 
-string: str = "Mi String"
-otra_string: str = "Mi otro String"
+from sys import stdout
 
-print(len(string), end="\n")
-print(len(otra_string), end="\n")
-print(string + " " + otra_string, end="\n")
+
+string: str = "Mi String"
+otraString: str = "Mi otro String"
+
+print(len(string), end = "\n", file = stdout)
+print(len(otraString), end = "\n", file = stdout)
+print(string + " " + otraString, end = "\n", file = stdout)
 
 
 """
@@ -29,14 +32,14 @@ Tambien se pueden escapar caracteres especiales
 \' comillas simples
 \\n
 """
-nueva_linea_string: str = "Este es un String\ncon salto de línea"
-print(nueva_linea_string, end="\n")
+nuevaLineaString: str = "Este es un String\ncon salto de línea"
+print(nuevaLineaString, end = "\n", file = stdout)
 
-string_tabulada: str = "\tEste es un String con tabulación"
-print(string_tabulada, end="\n")
+stringTabulada: str = "\tEste es un String con tabulación"
+print(stringTabulada, end = "\n", file = stdout)
 
-escapar_string: str = "\\tEste es un String \\n escapado"
-print(escapar_string, end="\n")
+escaparString: str = "\\tEste es un String \\n escapado"
+print(escaparString, end = "\n", file = stdout)
 
 # Formateo
 
@@ -62,7 +65,7 @@ Dentro de los parentesis podemos poner el orden de los argumentos
 
 ejemplo:
 
-print("Mi nombre es {1} {0} y mi edad es {2}".format(nombre, segundo_nombre, edad), end="\n")
+print("Mi nombre es {1} {0} y mi edad es {2}".format(nombre, segundo_nombre, edad), end = "\n", file = stdout)
 
 Así se imprimiría:
 >>> Mi nombre es Perez Daniel y mi edad es 18 
@@ -70,7 +73,7 @@ Eso es por que el ordenamiento empieza desde 0 osea que nombre es 0, segundo_nom
 y se sustituye en el orden que se le indique
 
 Tambien podemos ponerle un nombre a los argumentos
-print("Mi nombre es {nombre} {segundo_nombre} y mi edad es {edad}".format(nombre=nombre, segundo_nombre=segundo_nombre, edad=edad), end="\n")
+print("Mi nombre es {nombre} {segundo_nombre} y mi edad es {edad}".format(nombre=nombre, segundo_nombre=segundo_nombre, edad=edad), end = "\n", file = stdout)
 
 Así se imprimiría:
 >>> Mi nombre es Daniel Perez y mi edad es 18
@@ -91,7 +94,7 @@ Así se imprimiría:
 
 ejemplo:
 
-print(f"Mi nombre es {nombre} {segundo_nombre} y mi edad es {edad}", end="\n")
+print(f"Mi nombre es {nombre} {segundo_nombre} y mi edad es {edad}", end = "\n", file = stdout)
 
 Así se imprimiría:
 >>> Mi nombre es Daniel Perez y mi edad es 18
@@ -113,14 +116,14 @@ Así se imprimiría:
 12. %.2f para flotantes con dos decimales el 2 dice cuantos decimales queremos mostrar
 """
 print(
-    "Mi nombre es {} {} y mi edad es {}".format(nombre, segundo_nombre, edad), end="\n"
+    "Mi nombre es {} {} y mi edad es {}".format(nombre, segundo_nombre, edad), end = "\n", file = stdout
 )
-print("Mi nombre es %s %s y mi edad es %d" % (nombre, segundo_nombre, edad), end="\n")
+print("Mi nombre es %s %s y mi edad es %d" % (nombre, segundo_nombre, edad), end = "\n", file = stdout)
 print(
     "Mi nombre es " + nombre + " " + segundo_nombre + " y mi edad es " + str(edad),
-    end="\n",
+    end = "\n", file = stdout,
 )
-print(f"Mi nombre es {nombre} {segundo_nombre} y mi edad es {edad}", end="\n")
+print(f"Mi nombre es {nombre} {segundo_nombre} y mi edad es {edad}", end = "\n", file = stdout)
 
 # Desempaqueado de caracteres
 
@@ -135,10 +138,20 @@ d = h
 e = o
 f = n
 """
-lenguage = "python"
-a, b, c, d, e, f = lenguage
-print(a, end="\n")
-print(e, end="\n")
+
+a: str = ""
+b: str = ""
+c: str = ""
+d: str = ""
+e: str = ""
+f: str = ""
+
+lenguage: str = "python"
+
+a, b, c, d, e, f = lenguage # type: ignore
+
+print(a, end = "\n", file = stdout)
+print(e, end = "\n", file = stdout)
 
 
 # Slicing
@@ -165,20 +178,21 @@ El formato es el siguiente
 
 # El contenido de la variable lenguage es "python"
 
-# El resultado de lenguage_slice es "yt"
+# El resultado de lenguageSlice es "yt"
 """
 strings p y t h o n
 indice  0 1 2 3 4 5
 """
-lenguage_slice = lenguage[1:3]
+lenguageSlice = lenguage[1:3]
 
-print(lenguage_slice, end="\n")
+print(lenguageSlice, end = "\n", file = stdout)
 
 """
 Cuando se pone [1:] se empieza desde el caracter 1 hasta el final
+Lo mismo ----> [1:len(lenguageSlice):1]
 """
-lenguage_slice = lenguage[1:]
-print(lenguage_slice, end="\n")
+lenguageSlice = lenguage[1:]
+print(lenguageSlice, end = "\n", file = stdout)
 
 """
 Esta forma es para obtener el caracter antepenultimo
@@ -195,18 +209,18 @@ etc.
 poner [-0] 
 
 """
-lenguage_slice = lenguage[-2]
-print(lenguage_slice, end="\n")
+lenguageSlice = lenguage[-2]
+print(lenguageSlice, end = "\n", file = stdout)
 
-lenguage_slice = lenguage[0:5:2]
-print(lenguage_slice, end="\n")
+lenguageSlice = lenguage[0:5:2]
+print(lenguageSlice, end = "\n", file = stdout)
 
 """
 strings             p  y  t  h  o  n
 indice  positivo    0  1  2  3  4  5
 indice negativo    -6 -5 -4 -3 -2 -1
 
-lenguage_slice = lenguage[0:5:2]
+lenguageSlice = lenguage[0:5:2]
 empiezamos desde el caracter 0 hasta el caracter 6 con un salto de 2 en 2
 asi que el resultado seria
 inicio = p
@@ -223,44 +237,45 @@ Para darle la vuelta a un string se puede hacer de la siguiente forma
 [::-1] es el string completo
 los dos puntos indican que se va a empezar desde el principio hasta el final
 el -1 indica que se va a dar un salto de -1 en -1
+Lo mismo --> [-1: -len(a) - 1: -1]
 """
 
-lenguage_reversa = lenguage[::-1]
-print(lenguage_reversa)
+lenguageReversa = lenguage[::-1]
+print(lenguageReversa, end = "\n", file = stdout)
 
-lenguage_reversa = lenguage[::-2]
-print(lenguage_reversa)
+lenguageReversa = lenguage[::-2]
+print(lenguageReversa, end = "\n", file = stdout)
 
 # En python todo es un objeto
 # Metodos de strings
 
 # .capitalize() convierte la primera letra en mayuscula y el resto en minuscula y si ya esta en mayuscula la deja igual
-print(lenguage.capitalize())
+print(lenguage.capitalize(), end = "\n", file = stdout)
 
 # .upper() convierte todo el string en mayuscula y si ya esta en mayuscula la deja igual
-print(lenguage.upper())
+print(lenguage.upper(), end = "\n", file = stdout)
 
 # .count() cuenta cuantas veces se repite un caracter en un string recibe un argumento y es el caracter que se va a contar retorna un entero y si no encuentra el caracter retorna 0
 
-print(lenguage.count("t"))
+print(lenguage.count("t"), end = "\n", file = stdout)
 
 # .isalnum() retorna un booleano si el string es alfanumerico si tiene espacios retorna False
-print(lenguage.isnumeric())
-print("1".isnumeric())
+print(lenguage.isnumeric(), end = "\n", file = stdout)
+print("1".isnumeric(), end = "\n", file = stdout)
 
 # .lower() convierte todo el string en minuscula y si ya esta en minuscula la deja igual
-print(lenguage.lower())
+print(lenguage.lower(), end = "\n", file = stdout)
 
 # se puede encadenar metodos
 # .isupper() retorna un booleano si el string esta en mayuscula
 # Entonces .lower().isupper() retorna un booleano si el string esta en minuscula y si esta en minuscula retorna True
 # lo mismo pasa con .islower()
 
-print(lenguage.lower().isupper())
+print(lenguage.lower().isupper(), end = "\n", file = stdout)
 # .startswith() retorna un booleano si el string empieza con el argumento que se le pasa
-print(lenguage.startswith("Py"))
+print(lenguage.startswith("Py"), end = "\n", file = stdout)
 # .endswith() retorna un booleano si el string termina con el argumento que se le pasa
-print(lenguage.startswith("on"))
+print(lenguage.startswith("on"), end = "\n", file = stdout)
 
 # python es case sensitive ose es sensible a mayusculas y minusculas
 print("Py" == "py")  # No es lo mismo
@@ -268,6 +283,6 @@ print("Py" == "py")  # No es lo mismo
 """
 [:] retorna el string completo y es lo mismo que poner [::] Y [::1]
 """
-print(lenguage[:], end="\n")
-print(lenguage[::], end="\n")
-print(lenguage[::1], end="\n")
+print(lenguage[:], end = "\n", file = stdout)
+print(lenguage[::], end = "\n", file = stdout)
+print(lenguage[::1], end = "\n", file = stdout)

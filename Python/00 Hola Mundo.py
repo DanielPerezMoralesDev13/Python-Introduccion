@@ -6,8 +6,11 @@ Correo electrónico: danielperezdev@proton.me
 # Tema: Hola Mundo
 
 # Nuestro hola mundo en Python
-print("Hola Python", end="\n")
-print("Hola Python", end="\n")
+from sys import stdout
+
+
+print("Hola Python", end = "\n", file = stdout)
+print("Hola Python", end = "\n", file = stdout)
 
 # Esto es un comentario
 
@@ -41,9 +44,9 @@ para poder realizar las operaciones adecuadas.
 
 >>> type() es una función que nos permite saber el tipo de dato que estamos utilizando.
 """
-print(type("Soy un dato str"), end="\n")  # Tipo 'str'
-print(type(5), end="\n")  # Tipo 'int'
-print(type(1.5), end="\n")  # Tipo 'float'
-print(type(3 + 1j), end="\n")  # Tipo 'complex'
-print(type(True), end="\n")  # Tipo 'bool'
-print(type(print("Mi cadena de texto")), end="\n")  # Tipo 'NoneType'
+print(type("Soy un dato str"), end = "\n", file = stdout)  # Tipo 'str'
+print(type(5), end = "\n", file = stdout)  # Tipo 'int'
+print(type(1.5), end = "\n", file = stdout)  # Tipo 'float'
+print(type(3 + 1j), end = "\n", file = stdout)  # Tipo 'complex'
+print(type(True), end = "\n", file = stdout)  # Tipo 'bool'
+print(type(print("Mi cadena de texto")), end = "\n", file = stdout)  # Tipo 'NoneType'

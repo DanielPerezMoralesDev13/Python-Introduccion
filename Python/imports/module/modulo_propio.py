@@ -3,5 +3,6 @@ Autor: Daniel Benjamin Perez Morales
 GitHub: https://github.com/DanielPerezMoralesDev13
 Correo electrónico: danielperezdev@proton.me 
 """
-def idValor(valor: str | int | float | bool | list | tuple | dict | set) -> str:
-    return f"id {valor=} es " + str(id(valor)) 
+from typing import Tuple, Dict, Set, Union, List
+
+def id_valor(*, valor: Union[str, int, float, bool, List, Tuple, Dict, Set]) -> str: return f"id {valor=} es " + str(id(valor)) 

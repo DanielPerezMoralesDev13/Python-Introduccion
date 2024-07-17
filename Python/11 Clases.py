@@ -11,46 +11,51 @@ Paradigma: orientado a objetos es un paradigma de programación que se basa en o
 """
 
 
+from sys import stdout
+
+
 class PersonaVacia:
     # constructor
-    def __init__(self: object) -> None:
-        pass  # Para poder dejar la clase vacía
+    def __init__(self: "PersonaVacia") -> None:
+        # pass  # Para poder dejar la clase vacía
+        return None
 
 
-print(PersonaVacia, end="\n")  # Nos imprime el tipo de dato de la clase
-print(PersonaVacia(), end="\n")  # Nos imprime el objeto de la clase
+print(PersonaVacia, end = "\n", file = stdout)  # Nos imprime el tipo de dato de la clase
+print(PersonaVacia(), end = "\n", file = stdout)  # Nos imprime el objeto de la clase
 
 # Clase con constructor, funciones y popiedades privadas y públicas
 
 
 class Persona:
-    # Constructo
-    def __init__(self: object, nombre: str, segundo_nombre, alias: str = "Sin alias"):
+    # Constructor
+    def __init__(self: "Persona", nombre: str, segundoNombre: str, alias: str = "Sin alias") -> None:
         self.full_nombre: str | int = (
-            f"{nombre} {segundo_nombre} ({alias})"  # Propiedad pública
+            f"{nombre} {segundoNombre} ({alias})"  # Propiedad pública
         )
         self.__nombre: str = nombre  # Propiedad privada
+        return None
 
-    def Get_nombre(self: object) -> str:
-        return self.__nombre
+    def get_nombre(self: "Persona") -> str: return self.__nombre
 
-    def Caminar(self: object) -> None:
-        print(f"{self.full_nombre} está caminando", end="\n")
+    def caminar(self: "Persona") -> None:
+        print(f"{self.full_nombre} está caminando", end = "\n", file = stdout)
+        return None
 
 
-persona: Persona = Persona(nombre="Daniel", segundo_nombre="Benjamin")
-print(persona.full_nombre, end="\n")
-print(persona.Get_nombre(), end="\n")
-persona.Caminar()
+persona: Persona = Persona(nombre="Daniel", segundoNombre="Benjamin")
+print(persona.full_nombre, end = "\n", file = stdout)
+print(persona.get_nombre(), end = "\n", file = stdout)
+persona.caminar()
 
-otra_persona: Persona = Persona(
-    nombre="Daniel", segundo_nombre="Benajamin", alias="DanielDev"
+otraPersona: Persona = Persona(
+    nombre="Daniel", segundoNombre="Benajamin", alias="DanielDev"
 )
-print(otra_persona.full_nombre, end="\n")
-otra_persona.Caminar()
+print(otraPersona.full_nombre, end = "\n", file = stdout)
+otraPersona.caminar()
 # sobreescribimos la propiedad full_nombre
-otra_persona.full_nombre: str = "Daniel Benjamin Perez Morales"
-print(otra_persona.full_nombre, end="\n")
+otraPersona.full_nombre = "Daniel Benjamin Perez Morales"
+print(otraPersona.full_nombre, end = "\n", file = stdout)
 
-otra_persona.full_nombre: int = 100
-print(otra_persona.full_nombre, end="\n")
+otraPersona.full_nombre = 100
+print(otraPersona.full_nombre, end = "\n", file = stdout)
