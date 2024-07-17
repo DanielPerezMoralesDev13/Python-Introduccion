@@ -12,6 +12,7 @@ Paradigma: orientado a objetos es un paradigma de programación que se basa en o
 
 
 from sys import stdout
+from typing import Union
 
 
 class PersonaVacia:
@@ -30,7 +31,7 @@ print(PersonaVacia(), end = "\n", file = stdout)  # Nos imprime el objeto de la 
 class Persona:
     # Constructor
     def __init__(self: "Persona", nombre: str, segundoNombre: str, alias: str = "Sin alias") -> None:
-        self.full_nombre: str | int = (
+        self.full_nombre: Union[str, int] = (
             f"{nombre} {segundoNombre} ({alias})"  # Propiedad pública
         )
         self.__nombre: str = nombre  # Propiedad privada

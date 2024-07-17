@@ -45,10 +45,15 @@ print(len(string), end = "\n", file = stdout)
 
 # Variables en una sola línea. ¡Cuidado con abusar de esta sintaxis!
 
-nomber, segundoNombre, alias, edad = "Daniel", "Perez", "DaniDev", 18
+nombre: Union[str, int, None] = None
+segundoNombre: Union[str, None] = None
+alias: Union[str, None] = None
+edad: Union[int, str, None] = None
+
+nombre, segundoNombre, alias, edad = "Daniel", "Perez", "DaniDev", 18
 print(
     "Me llamo:",
-    nomber,
+    nombre,
     segundoNombre,
     ". Mi edad es:",
     edad,
@@ -58,7 +63,7 @@ print(
 )
 
 # Inputs
-nombre: Union[str, int]  = str(input("¿Cuál es tu nombre? "))
+nombre = str(input("¿Cuál es tu nombre? "))
 edad = int(input("¿Cuántos años tienes? "))
 print(nombre, end="\n", file=stdout)
 print(edad, end="\n", file=stdout)
@@ -67,9 +72,9 @@ print(edad, end="\n", file=stdout)
 nombre = 35
 # ! Esto es un error de tipo de dato en python
 # ! pero no da error en tiempo de ejecución por que es un lenguaje interpretado y no compilado
-edad = "Daniel" # type: ignore
+edad = "Daniel"
 
-print(nomber, end="\n", file=stdout)
+print(nombre, end="\n", file=stdout)
 print(edad, end="\n", file=stdout)
 
 """

@@ -148,6 +148,7 @@ f: str = ""
 
 lenguage: str = "python"
 
+# error: Unpacking a string is disallowed  [misc]
 a, b, c, d, e, f = lenguage # type: ignore
 
 print(a, end = "\n", file = stdout)
