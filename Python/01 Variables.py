@@ -90,7 +90,7 @@ print(type(direccion), end = "\n", file = stdout)
 """ 
 En python no existen las constantes, pero se pueden simular con mayúsculas y guiones bajos. Se usa para indicar que una variable no debe ser modificada en el futuro
 
-Las constantes se suelen definir al principio del archivo o al principio de una clase Y puden tener cualquier tipo de dato
+Las constantes se suelen definir al principio del fichero o al principio de una clase Y puden tener cualquier tipo de dato
 """
 FLOTANTE: float = 1.2
 CADENA: str = "Mi cadena"
